@@ -30,12 +30,6 @@ async def test_project(dut):
 
     # Keep testing the module by changing the input values, waiting for
     # one or more clock cycles, and asserting the expected output values.
-    import cocotb
-from cocotb.triggers import RisingEdge
-import random
-
-@cocotb.test()
-async def test_koggestone_adder_4bit(dut):
     """Test Kogge-Stone Adder 4-bit with corner cases and random inputs"""
     
     # Edge case tests
@@ -69,5 +63,4 @@ async def test_koggestone_adder_4bit(dut):
 
         assert dut.sum.value == expected_sum, f"sum mismatch: {dut.sum.value} != {expected_sum}"
         assert dut.carry_out.value == expected_carry, f"carry mismatch: {dut.carry_out.value} != {expected_carry}"
-
     
